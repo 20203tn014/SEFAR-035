@@ -40,6 +40,12 @@ input {
     border: 1px solid var(--border-color);
 }
 
+.logo {
+    display: flex;
+    width: 150px;
+    height: auto;
+}
+
 #mainForm {
     width: 800px;
     max-width: 800px;
@@ -51,25 +57,25 @@ input {
     min-height: 900px;
 }
 
-.conteFlex {
+.opciones {
     margin: 2px;
     width: 100%;
     display: flex;
     justify-content: space-between;
 }
 
-.conteFlex span:hover {
+.opciones span:hover {
     cursor: pointer;
     background-color: #555;
     color: #fff;
     font-weight: 800;
 }
 
-.conteFlex label:hover {
+.opciones label:hover {
     cursor: pointer;
 }
 
-.conteFlex span {
+.opciones span {
     background-color: #cecece;
     width: 3rem;
     height: 3rem;
@@ -87,6 +93,12 @@ input[type="radio"] {
     display: none;
     cursor: pointer;
     /* opacity: 0; */
+}
+
+.checkRespuesta {
+    color: #555;
+    font-weight: 800;
+    background-color: #8dc53c !important;
 }
 
 .progress-bar {
@@ -174,7 +186,7 @@ th {
     text-align: left;
 }
 
-.progress {
+.progreso {
     margin-top: 10px;
     background-color: #999 !important;
 }
