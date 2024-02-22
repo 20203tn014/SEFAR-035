@@ -54,14 +54,12 @@ function guardarEncuesta() {
     let spanCodigo = document.querySelector("#codigo").textContent;
     let codigo = Number(spanCodigo);
 
-    // Obtener valores de los campos
     let nombre = $("#nombre").val();
     let puesto = $("#puesto").val();
     let tiempoEmpresa = $("#tiempoEmpresa").val();
     let centroTrabajo = $("#centroTrabajo").val();
-    let correo = $("#correo").val(); // Nuevo campo
+    let correo = $("#correo").val();
 
-    // Agregar estos valores a los datos que se enviarán
     let dataSend =
         formEncuesta +
         "&codigo=" +
@@ -75,7 +73,7 @@ function guardarEncuesta() {
         "&centroTrabajo=" +
         centroTrabajo +
         "&correo=" +
-        correo; // Nuevo campo
+        correo;
 
     $.ajax({
         url: "encuesta_guardada.php",

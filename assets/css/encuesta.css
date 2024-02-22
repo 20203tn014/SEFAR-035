@@ -92,13 +92,12 @@ input[type="radio"] {
     position: absolute;
     display: none;
     cursor: pointer;
-    /* opacity: 0; */
 }
 
 .checkRespuesta {
-    color: #555;
+    color: #fff;
     font-weight: 800;
-    background-color: #8dc53c !important;
+    background-color: #5b7da5 !important;
 }
 
 .progress-bar {

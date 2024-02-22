@@ -13,7 +13,6 @@
 <body class="loader">
 
     <div id="mainForm">
-
         <div id="encuesta">
             <table id="header">
                 <tbody>
@@ -98,9 +97,9 @@
                 <table class="space padding-sm">
                     <thead>
                         <tr id="cabecera">
-                            <th>#</th>
-                            <th>Pregunta </th>
-                            <th>Respuesta</th>
+                            <th style="text-align: center;">#</th>
+                            <th style="text-align: center;">Pregunta</th>
+                            <th style="text-align: center;">Respuesta</th>
                         </tr>
                     </thead>
                     <tbody>
