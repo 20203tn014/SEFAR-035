@@ -1,0 +1,190 @@
+document.addEventListener("DOMContentLoaded", function () {
+
+    actualizarGraficas();
+
+    function actualizarGraficas() {
+        // Gráfica de dona
+        actualizarGraficaDona("grafica1", 1);
+        actualizarGraficaDona("grafica4", 4);
+
+        // Gráfica de pastel
+        actualizarGraficaPastel("grafica2", 2);
+        actualizarGraficaPastel("grafica3", 3);
+
+        // Gráfica de línea
+        actualizarGraficaLinea("grafica5", 5);
+        actualizarGraficaLinea("grafica6", 6);
+        actualizarGraficaLinea("grafica7", 7);
+        actualizarGraficaLinea("grafica8", 8);
+        actualizarGraficaLinea("grafica9", 9);
+        actualizarGraficaLinea("grafica10", 10);
+
+        // Gráfica de barras
+        actualizarGraficaBarra("grafica11", 11);
+        actualizarGraficaBarra("grafica12", 12);
+        actualizarGraficaBarra("grafica13", 13);
+        actualizarGraficaBarra("grafica14", 14);
+        actualizarGraficaBarra("grafica15", 15);
+    }
+
+    function actualizarGraficaDona(idGrafica, idPregunta) {
+        $.ajax({
+            url: "obtener_graficas.php",
+            type: "POST",
+            data: { idPregunta: idPregunta },
+            dataType: "json",
+            success: function (data) {
+                dibujarGraficaDona(idGrafica, data);
+            },
+            error: function (error) {
+                console.error("Error al obtener los datos:", error);
+            },
+        });
+    }
+
+    function dibujarGraficaDona(idGrafica, data) {
+        var ctx = document.getElementById(idGrafica).getContext("2d");
+        var chart = new Chart(ctx, {
+            type: "doughnut",
+            data: {
+                labels: ["No", "Sí"],
+                datasets: [
+                    {
+                        label: "Trabajadores",
+                        data: Object.values(data),
+                        backgroundColor: ["#8bbcff", "#ffd086"],
+                        borderColor: ["#6eaaff", "#ffc16c"],
+                        borderWidth: 1,
+                    },
+                ],
+            },
+            options: {
+                scales: {
+                    y: {
+                        display: false,
+                    },
+                },
+                cutout: "60%"
+            },
+        });
+    }
+
+    function actualizarGraficaPastel(idGrafica, idPregunta) {
+        $.ajax({
+            url: "obtener_graficas.php",
+            type: "POST",
+            data: { idPregunta: idPregunta },
+            dataType: "json",
+            success: function (data) {
+                dibujarGraficaPastel(idGrafica, data);
+            },
+            error: function (error) {
+                console.error("Error al obtener los datos:", error);
+            },
+        });
+    }
+
+    function dibujarGraficaPastel(idGrafica, data) {
+        var ctx = document.getElementById(idGrafica).getContext("2d");
+        var chart = new Chart(ctx, {
+            type: "pie",
+            data: {
+                labels: ["No", "Sí"],
+                datasets: [
+                    {
+                        label: "Trabajadores",
+                        data: Object.values(data),
+                        backgroundColor: ["#8affb8", "#ff85d0"],
+                        borderColor: ["#6dffac", "#ff6ac7"],
+                        borderWidth: 1,
+                    },
+                ],
+            },
+            options: {
+                scales: {
+                    y: {
+                        display: false,
+                    },
+                },
+                cutout: "10%",
+            },
+        });
+    }
+
+    function actualizarGraficaLinea(idGrafica, idPregunta) {
+        $.ajax({
+            url: "obtener_graficas.php",
+            type: "POST",
+            data: { idPregunta: idPregunta },
+            dataType: "json",
+            success: function (data) {
+                dibujarGraficaLinea(idGrafica, data);
+            },
+            error: function (error) {
+                console.error("Error al obtener los datos:", error);
+            },
+        });
+    }
+
+    function dibujarGraficaLinea(idGrafica, data) {
+        var ctx = document.getElementById(idGrafica).getContext("2d");
+        var chart = new Chart(ctx, {
+            type: "line",
+            data: {
+                labels: ["No", "Sí"],
+                datasets: [
+                    {
+                        label: "Trabajadores",
+                        data: Object.values(data),
+                        backgroundColor: ["#8bbcff", "#ff8786"],
+                        borderColor: ["#6eaaff", "#ff7670"],
+                        pointStyle: "circle",
+                        pointRadius: 5,
+                        borderWidth: 2,
+                    },
+                ],
+            },
+            options: {
+                scales: {
+                    x: {
+                        beginAtZero: true,
+                    },
+                },
+            },
+        });
+    }
+
+    function actualizarGraficaBarra(idGrafica, idPregunta) {
+        $.ajax({
+            url: "obtener_graficas.php",
+            type: "POST",
+            data: { idPregunta: idPregunta },
+            dataType: "json",
+            success: function (data) {
+                dibujarGraficaBarra(idGrafica, data);
+            },
+            error: function (error) {
+                console.error("Error al obtener los datos:", error);
+            },
+        });
+    }
+
+    function dibujarGraficaBarra(idGrafica, data) {
+        var ctx = document.getElementById(idGrafica).getContext("2d");
+        var chart = new Chart(ctx, {
+            type: "bar",
+            data: {
+                labels: ["No", "Sí"],
+                datasets: [
+                    {
+                        label: "Trabajadores",
+                        data: Object.values(data),
+                        backgroundColor: ["#a08cff", "#8bff6a"],
+                        borderColor: ["#8b6dff", "#81c769"],
+                        borderWidth: 1,
+                    },
+                ],
+            },
+        });
+    }
+});

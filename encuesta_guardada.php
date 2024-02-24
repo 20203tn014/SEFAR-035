@@ -1,7 +1,6 @@
 <?php
 include('config.php');
 
-// Obtener datos del formulario
 $nombre = mysqli_real_escape_string($connection, $_POST['nombre']);
 $puesto = mysqli_real_escape_string($connection, $_POST['puesto']);
 $tiempoEmpresa = mysqli_real_escape_string($connection, $_POST['tiempoEmpresa']);
