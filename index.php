@@ -11,7 +11,7 @@
 </head>
 
 <body class="loader">
-
+    
     <div id="mainForm">
         <div id="encuesta">
             <table id="header">

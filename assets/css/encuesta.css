@@ -115,7 +115,7 @@ input[type="radio"] {
 
 .btn-primary:hover {
     opacity: 0.9;
-    background-color: #218838 !important;
+    background-color: #218838;
 }
 
 .btn.disabled,
@@ -145,8 +145,8 @@ fieldset[disabled] .btn {
 .btn,
 .btn:hover,
 .btn:focus {
-    background-color: var(--primary-color) !important;
-    border-color: var(--primary-color) !important;
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
     color: #fff;
     text-decoration: none;
 }
@@ -188,4 +188,32 @@ th {
 .progreso {
     margin-top: 10px;
     background-color: #999 !important;
+}
+
+/* Dashboard */
+
+.dashboard-btn-success {
+    font-size: 15px;
+    text-align: center !important;
+    color: black;
+    background-color: #a5edb5 !important;
+    border-color: #218838 !important;
+}
+
+.dashboard-btn-success:hover {
+    opacity: 0.9;
+    background-color: #299656 !important;
+}
+
+.dashboard-btn-danger {
+    font-size: 15px;
+    text-align: center !important;
+    color: black;
+    background-color: #ffcbcb !important;
+    border-color: #d3192b !important;
+}
+
+.dashboard-btn-danger:hover {
+    opacity: 0.9;
+    background-color: #e43243 !important;
 }
