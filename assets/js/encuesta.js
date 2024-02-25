@@ -83,10 +83,14 @@ function guardarEncuesta() {
         success: function (data) {
             console.log(data);
             if (data.respuesta) {
-                alert(
-                    "Las respuestas se han registrado de manera exitosa, ya puede cerrar la encuesta."
-                );
-                location.href = "index.php";
+                Swal.fire({
+                    title: '¡Encuesta registrada!',
+                    text: 'Las respuestas se han registrado de manera exitosa. Ya puede salir de la encuesta.',
+                    icon: 'success'
+                }).then(() => {
+                    location.href = "index.php";
+                    actualizarGraficas();
+                });
             }
         },
     });

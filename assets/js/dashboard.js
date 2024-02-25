@@ -1,5 +1,60 @@
 document.addEventListener("DOMContentLoaded", function () {
 
+    var btnDescargar = document.getElementById('btnDescargar');
+    btnDescargar.addEventListener('click', descargarResultados);
+
+    function descargarResultados() {
+        Swal.fire({
+            icon: "success",
+            title: "Descargando resultados...",
+            showConfirmButton: false,
+            timer: 3000
+        });
+        window.location.href = 'descargar_resultados.php';
+    }
+
+
+    var btnEliminar = document.getElementById('btnEliminar');
+    btnEliminar.addEventListener('click', function () {
+        eliminarRegistros();
+    });
+
+    function eliminarRegistros() {
+        Swal.fire({
+            title: '¿Está seguro que desea continuar?',
+            text: 'Una vez realizada esta acción, no se puede deshacer',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#05a649',
+            cancelButtonColor: '#e43243',
+            confirmButtonText: 'Sí, eliminar registros',
+            cancelButtonText: 'Cancelar'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                $.ajax({
+                    url: 'eliminar_registros.php',
+                    type: 'POST',
+                    dataType: 'json',
+                    success: function (data) {
+                        if (data.success) {
+                            Swal.fire('¡Eliminación completa!', 'Todos los registros se han eliminado exitosamente.', 'success')
+                                .then(() => {
+                                    location.reload();
+                                });
+                        } else {
+                            Swal.fire('Error', 'No fue posible eliminar los registros. Por favor, inténtelo de nuevo más tarde.', 'error');
+                        }
+                    },
+                    error: function (error) {
+                        console.error('Error en la solicitud AJAX:', error);
+                        Swal.fire('Error', 'Error en la solicitud. Por favor, inténtelo de nuevo más tarde.', 'error');
+                    }
+                });
+            }
+        });
+    }
+
+
     actualizarGraficas();
 
     function actualizarGraficas() {
