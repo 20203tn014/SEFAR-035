@@ -29,7 +29,6 @@
 
     $Data = mysqli_query($connection, $DataEncuesta);
 
-    // Obtener todas las preguntas
     $preguntas = [];
     while ($preguntaRow = mysqli_fetch_assoc($Data)) {
         $codigoEncuesta = $preguntaRow['codigo_encuesta'];

@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function descargarResultados() {
         Swal.fire({
             icon: "success",
-            title: "Descargando resultados...",
+            title: "¡Descarga exitosa!",
             showConfirmButton: false,
             timer: 3000
         });
@@ -58,15 +58,13 @@ document.addEventListener("DOMContentLoaded", function () {
     actualizarGraficas();
 
     function actualizarGraficas() {
-        // Gráfica de dona
+
         actualizarGraficaDona("grafica1", 1);
         actualizarGraficaDona("grafica4", 4);
 
-        // Gráfica de pastel
         actualizarGraficaPastel("grafica2", 2);
         actualizarGraficaPastel("grafica3", 3);
 
-        // Gráfica de línea
         actualizarGraficaLinea("grafica5", 5);
         actualizarGraficaLinea("grafica6", 6);
         actualizarGraficaLinea("grafica7", 7);
@@ -74,7 +72,6 @@ document.addEventListener("DOMContentLoaded", function () {
         actualizarGraficaLinea("grafica9", 9);
         actualizarGraficaLinea("grafica10", 10);
 
-        // Gráfica de barras
         actualizarGraficaBarra("grafica11", 11);
         actualizarGraficaBarra("grafica12", 12);
         actualizarGraficaBarra("grafica13", 13);
@@ -100,6 +97,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function dibujarGraficaDona(idGrafica, data) {
         var ctx = document.getElementById(idGrafica).getContext("2d");
         var chart = new Chart(ctx, {
+            plugins: [ChartDataLabels],
             type: "doughnut",
             data: {
                 labels: ["No", "Sí"],
@@ -119,7 +117,15 @@ document.addEventListener("DOMContentLoaded", function () {
                         display: false,
                     },
                 },
-                cutout: "60%"
+                cutout: "60%",
+                plugins: {
+                    datalabels: {
+                        formatter: function (value, ctx) {
+                            return value;
+                        },
+                        color: "#0b0b0b",
+                    },
+                },
             },
         });
     }
@@ -142,6 +148,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function dibujarGraficaPastel(idGrafica, data) {
         var ctx = document.getElementById(idGrafica).getContext("2d");
         var chart = new Chart(ctx, {
+            plugins: [ChartDataLabels],
             type: "pie",
             data: {
                 labels: ["No", "Sí"],
@@ -162,6 +169,14 @@ document.addEventListener("DOMContentLoaded", function () {
                     },
                 },
                 cutout: "10%",
+                plugins: {
+                    datalabels: {
+                        formatter: function (value, ctx) {
+                            return value;
+                        },
+                        color: "#0b0b0b",
+                    },
+                },
             },
         });
     }
@@ -227,6 +242,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function dibujarGraficaBarra(idGrafica, data) {
         var ctx = document.getElementById(idGrafica).getContext("2d");
         var chart = new Chart(ctx, {
+            plugins: [ChartDataLabels],
             type: "bar",
             data: {
                 labels: ["No", "Sí"],
@@ -240,6 +256,16 @@ document.addEventListener("DOMContentLoaded", function () {
                     },
                 ],
             },
+            options: {
+                plugins: {
+                    datalabels: {
+                        formatter: function (value, ctx) {
+                            return value;
+                        },
+                        color: "#0b0b0b",
+                    },
+                },
+            }
         });
     }
 });

@@ -85,7 +85,7 @@ function guardarEncuesta() {
             if (data.respuesta) {
                 Swal.fire({
                     title: '¡Encuesta registrada!',
-                    text: 'Las respuestas se han registrado de manera exitosa. Ya puede salir de la encuesta.',
+                    text: 'Las respuestas se han registrado de manera exitosa. Puede salir de la encuesta.',
                     icon: 'success'
                 }).then(() => {
                     location.href = "index.php";
