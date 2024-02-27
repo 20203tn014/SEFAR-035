@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<ruleset name="sefar">
+    <description>Reglas personalizadas</description>
+    <file>./index.php</file>
+    <file>./encuesta_guardada.php</file>
+    <file>./dashboard.php</file>
+    <file>./obtener_graficas.php</file>
+    <file>./descargar_resultados.php</file>
+    <file>./eliminar_registros.php</file>
+    <arg name="extensions" value="php"/>
+    <rule ref="PSR2"/>
+</ruleset>

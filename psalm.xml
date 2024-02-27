@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<psalm>
+    <projectFiles>
+        <file name="./index.php" />
+        <file name="./encuesta_guardada.php" />
+        <file name="./dashboard.php" />
+        <file name="./obtener_graficas.php" />
+        <file name="./descargar_resultados.php" />
+        <file name="./eliminar_registros.php" />
+    </projectFiles>
+</psalm>

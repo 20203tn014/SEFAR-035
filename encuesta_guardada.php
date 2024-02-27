@@ -1,3 +1,4 @@
+<?php require 'vendor/autoload.php'; ?>
 <?php
 include('config.php');
 
