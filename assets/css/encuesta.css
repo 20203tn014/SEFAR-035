@@ -215,3 +215,27 @@ th {
     opacity: 0.9;
     background-color: #e43243 !important;
 }
+
+@media (max-width: 767px) {
+    #mainForm {
+        width: 100%;
+        max-width: none;
+        margin: 20px auto;
+        padding: 20px;
+    }
+
+    .logo {
+        width: 100%;
+    }
+
+    .opciones span {
+        width: 2.5rem;
+        height: 2.5rem;
+        font-size: 14px;
+        padding: 14px 0;
+    }
+
+    .btn-primary {
+        margin-top: 10px;
+    }
+}

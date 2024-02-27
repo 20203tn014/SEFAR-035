@@ -20,11 +20,11 @@
                 <tbody>
                     <tr>
                         <td rowspan="4" style="text-align:center"><img src="assets/img/LogoR&B.png" class="logo" alt="R&B Consulting"></td>
-                        <td rowspan="3" class="text-center text-bold">Norma Oficial Mexicana NOM-035-STPS-2018, Factores de riesgo psicosocial en el trabajo-Identificación, análisis y prevención</td>
+                        <td rowspan="3" class="text-center text-bold">Sistema para encuestas electrónicas bajo la NOM-035 para la identificación de factores de riesgo psicosocial</td>
                         <td><small><strong>Identificador:</strong> <span id="codigo"><?php echo rand(); ?></span></small></td>
                     </tr>
                     <tr>
-                        <td><small><strong>Versión:</strong> <?php echo '1'; ?></small></td>
+                        <td><small><strong>SEFAR-035:</strong> <?php echo 'V.1'; ?></small></td>
                     </tr>
                     <tr>
                         <td>
