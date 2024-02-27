@@ -49,7 +49,29 @@ function btnAccion(sustraerInt = 0) {
     }
 }
 
+function validarCampos() {
+    let nombre = $("#nombre").val();
+    let puesto = $("#puesto").val();
+    let tiempoEmpresa = $("#tiempoEmpresa").val();
+    let centroTrabajo = $("#centroTrabajo").val();
+    let correo = $("#correo").val();
+
+    if (!nombre || !puesto || !tiempoEmpresa || !centroTrabajo || !correo) {
+        Swal.fire({
+            title: '¡Campos incompletos!',
+            text: 'Por favor, complete todos los campos iniciales con la información requerida para continuar.',
+            icon: 'info'
+        });
+        return false;
+    }
+    return true;
+}
+
 function guardarEncuesta() {
+    if (!validarCampos()) {
+        return;
+    }
+
     let formEncuesta = $("#formEncuesta").serialize();
     let spanCodigo = document.querySelector("#codigo").textContent;
     let codigo = Number(spanCodigo);
