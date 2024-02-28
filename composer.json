@@ -2,6 +2,13 @@
     "name": "ryb/sefar",
     "description": "Sistema para encuestas electrónicas bajo la NOM-035 para la identificación de factores de riesgo psicosocial",
     "type": "project",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "Rodolfo Campos",
+            "email": "20203tn014@utez.edu.mx"
+        }
+    ],
     "require-dev": {
         "squizlabs/php_codesniffer": "^3.0",
         "vimeo/psalm": "^5.0"
