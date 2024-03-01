@@ -1,5 +1,5 @@
-<?php require 'vendor/autoload.php'; ?>
 <?php
+header('Content-type: text/html; charset=utf-8');
 include('config.php');
 
 $nombre = mysqli_real_escape_string($connection, $_POST['nombre']);
