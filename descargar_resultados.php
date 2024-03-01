@@ -12,6 +12,7 @@
 
     <?php
     include('config.php');
+    mysqli_set_charset($connection, "utf8mb4");
     date_default_timezone_set("America/Mexico_City");
     $fecha = date("d-m-Y");
 

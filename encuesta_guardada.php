@@ -1,6 +1,6 @@
 <?php
-header('Content-type: text/html; charset=utf-8');
 include('config.php');
+mysqli_set_charset($connection, "utf8mb4");
 
 $nombre = mysqli_real_escape_string($connection, $_POST['nombre']);
 $puesto = mysqli_real_escape_string($connection, $_POST['puesto']);

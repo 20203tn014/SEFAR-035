@@ -43,6 +43,7 @@
 
             <?php
             include('config.php');
+            mysqli_set_charset($connection, "utf8mb4");
             $preguntasBD = ("SELECT * FROM preguntas WHERE status='1'");
             $query = mysqli_query($connection, $preguntasBD);
 
